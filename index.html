@@ -51,6 +51,9 @@
         background-color: #efefef; font-family: 'Poppins', sans-serif; font-size: 14px; color: #393939; margin: 0 auto;
         }
 
+         /* ------------------------------------------ */
+        /* dynamic text ESP */
+
         .wrapper{
           display: flex;
         }
@@ -98,6 +101,75 @@
             left: 0;
           }
       }
+
+    /* end dynamic text ESP */
+    /* ------------------------------------------ */
+
+     /* ------------------------------------------ */
+
+    /* portrait conic rotation */
+
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+
+        @-webkit-keyframes rotate {
+          100% {
+            transform: rotate(1turn);
+          }
+        }
+
+        @keyframes rotate {
+          100% {
+            transform: rotate(1turn);
+          }
+        }
+
+      .conic {
+              position: relative;
+              z-index: 0;
+              width: 350px;
+              height: 250px;
+              margin: 20px;
+              border-radius: 10px;
+              overflow: hidden;
+              padding: 2rem;
+            }
+            .conic::before {
+              content: "";
+              position: absolute;
+              z-index: -2;
+              left: -50%;
+              top: -50%;
+              width: 200%;
+              height: 200%;
+              background-color: #1a232a;
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              background-image: conic-gradient(transparent, #e7e7e2, transparent 30%);
+              -webkit-animation: rotate 4s linear infinite;
+                      animation: rotate 4s linear infinite;
+            }
+            .conic::after {
+              content: "";
+              position: absolute;
+              z-index: -1;
+              left: 6px;
+              top: 6px;
+              width: calc(100% - 12px);
+              height: calc(100% - 12px);
+              background: #e7e7e2;
+              border-radius: 5px;
+            }
+
+            .conic-demo::after {
+              -webkit-animation: opacityChange 5s infinite linear;
+                      animation: opacityChange 5s infinite linear;
+            }
+
+        /* end portrait conic rotation */
+        /* ------------------------------------------ */
+
 
         @media (max-width: 461px) {
           img {
@@ -378,7 +450,7 @@
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
                     <tr>
                         <td class="padding" width="70"></td>
-                        <td bgcolor="#e7e7e2" style="border-top-right-radius: 25px;border-bottom: thin;">
+                        <td bgcolor="#e7e7e2" style="border-top-right-radius: 25px;border-bottom: thin;" class="conic conic-demo">
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td height="30" class="height_20"></td>
